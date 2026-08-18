@@ -1,53 +1,3 @@
-# diyBMS Current Monitor
-
-Isolated current, voltage and amp hour counting monitor for battery banks up to 85 volt.
-
-Designed for use with the diyBMS controller, although can be operated standalone using RS485 and MODBUS
-
-The MODBUS register list is [here](./Code/diybmsCurrentShunt/MODBUS%20Registers.md)
-
-# Videos on how to use and build
-
-[YouTube playlist](https://youtube.com/playlist?list=PLHhwQCDPuRcZW3u0jJucsiCCsUbNbMy-c) for DIYBMS videos
-
-
-# Support
-
-If you find the BMS useful, please consider buying me a beer, check out Patron for more information
-
-https://patreon.com/StuartP
-
-Forum:
-https://community.openenergymonitor.org/c/hardware/diybms/53
-
-
-# HARDWARE
-
-This repository contains the hardware designs, generally in KiCad format.  Unless you are changing the design, you don't need to use/install KiCad, just use the premade files.
-
-The GERBER files are in the [export folder](CurrentShuntCircuit/export), along with the files for JLCPCB assembly service.  You need to request the BOTTOM of the board to be assembled!!
-
-* [current_monitor_gerbers.zip](../../raw/master/CurrentShuntCircuit/export/current_monitor_gerbers.zip)
-* [CurrentShuntCircuit_bom_jlc.csv](../../raw/master/CurrentShuntCircuit/export/CurrentShuntCircuit_bom_jlc.csv)
-* [CurrentShuntCircuit_cpl_jlc.csv](../../raw/master/CurrentShuntCircuit/export/CurrentShuntCircuit_cpl_jlc.csv)
-
-If you use this coupon code when you place a JLCPCB order
-
-JLC-Stuart
-
-and this link
-
-https://jlcpcb.com/RSZ
-
-you will get a discount and I get a very small amount of credit for every 30 orders, which helps to support the cost of prototyping new designs and adding new features.
-
-Gerber and BOM files are automatically generated when changes are made to the design and pushed into GITHUB.
-
-The bill of materials (BOM) is [here](./CurrentShuntCircuit/export/CurrentShuntCircuit-bom.csv)
-
-<img alt='top' src="./CurrentShuntCircuit/export/CurrentShuntCircuit-top.png" width="50%"/>
-
-<img alt='bottom' src="./CurrentShuntCircuit/export/CurrentShuntCircuit-bottom.png" width="50%"/>
 
 
 ## Texas Instruments
@@ -90,15 +40,10 @@ For example a 200amp/50mV shunt:
 200 * (40.96 / 50) = 163.84amp maximum reading.
 
 
-# CODE/FIRMWARE
+# CODE
 
-[![build-code](https://github.com/stuartpittaway/diyBMS-CurrentShunt/actions/workflows/build-code.yaml/badge.svg?branch=master)](https://github.com/stuartpittaway/diyBMS-CurrentShunt/actions/workflows/build-code.yaml)
+Source code is located in the code file.
 
-The board uses an ATTINY1614 chip, this requires an UPDI style of programmer, you can use an old Arduino style board to do this.  Take a look at [this](https://www.hackster.io/john-bradnam/create-your-own-updi-programmer-1e55f1) or [this](https://github.com/SpenceKonde/AVR-Guidance/blob/master/UPDI/jtag2updi.md).
-
-Source code is located in the [Code](Code) folder, and requires PLATFORM.IO to compile.
-
-Precompiled versions are available in the [releases](https://github.com/stuartpittaway/diyBMS-CurrentShunt/releases) page.  You use AVRDUDE to program these to the ATTINY chip using an UPDI programmer.
 
 ## Programming ATTINY1614
 
